@@ -2,6 +2,12 @@ import React, { Suspense, useEffect, useState } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import { Credentials, StringTranslations } from '@crowdin/crowdin-api-client'
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import Popups from '../components/Popups'
 import Web3ReactManager from '../components/Web3ReactManager'
 import { RedirectDuplicateTokenIds, RedirectOldAddLiquidityPathStructure } from './AddLiquidity/redirects'
@@ -60,6 +66,7 @@ const Marginer = styled.div`
 `
 
 export default function App() {
+  const [usCitizenDialogOpen, setUsCitzenDialogOpen] = React.useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState<any>(undefined)
   const [translatedLanguage, setTranslatedLanguage] = useState<any>(undefined)
   const [translations, setTranslations] = useState<Array<any>>([])
@@ -70,6 +77,10 @@ export default function App() {
   const credentials: Credentials = {
     token: apiKey,
   }
+
+  const handleClose = () => {
+    setUsCitzenDialogOpen(false);
+  };
 
   const stringTranslationsApi = new StringTranslations(credentials)
 
@@ -143,6 +154,28 @@ export default function App() {
                   <Marginer />
                 </BodyWrapper>
               </Menu>
+              <Dialog
+                open={usCitizenDialogOpen}
+                onClose={(event, reason) => {
+                  if (reason !== "backdropClick") {
+                    handleClose();
+                  }
+                }}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">
+                  Confirm citizenship
+                </DialogTitle>
+                <DialogContent>
+                  <DialogContentText id="alert-dialog-description">
+                    By clicking continue, you confirm that you are not a U.S. citizen.
+                  </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                  <Button variant="contained" color="info" onClick={handleClose}>Continue</Button>
+                </DialogActions>
+              </Dialog>
             </TranslationsContext.Provider>
           </LanguageContext.Provider>
         </AppWrapper>

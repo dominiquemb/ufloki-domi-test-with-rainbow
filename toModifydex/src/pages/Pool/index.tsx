@@ -18,7 +18,9 @@ import { toV2LiquidityToken, useTrackedTokenPairs } from 'state/user/hooks'
 import { Dots } from 'components/swap/styleds'
 import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
-import AppBody from '../AppBody'
+// import AppBody from '../AppBody'
+import RainbowCardBacklight from '../../components/RainbowCardBacklight/RainbowCardBacklight'
+import { RainbowCard } from '../../components/Card'
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -57,7 +59,8 @@ export default function Pool() {
   return (
     <>
       <CardNav activeIndex={1} />
-      <AppBody>
+      <RainbowCard>
+        <RainbowCardBacklight />
         <PageHeader
           title={TranslateString(262, 'Liquidity')}
           description={TranslateString(1168, 'Add liquidity to receive LP tokens')}
@@ -119,7 +122,7 @@ export default function Pool() {
             </AutoColumn>
           </CardBody>
         </AutoColumn>
-      </AppBody>
+      </RainbowCard>
     </>
   )
 }

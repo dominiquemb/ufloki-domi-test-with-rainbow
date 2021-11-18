@@ -15,8 +15,10 @@ import { useTokenBalance } from 'state/wallet/hooks'
 import { StyledInternalLink } from 'components/Shared'
 import { currencyId } from 'utils/currencyId'
 import useI18n from 'hooks/useI18n'
-import AppBody from '../AppBody'
+// import AppBody from '../AppBody'
 import { Dots } from '../Pool/styleds'
+import RainbowCardBacklight from '../../components/RainbowCardBacklight/RainbowCardBacklight'
+import { RainbowCard } from '../../components/Card'
 
 enum Fields {
   TOKEN0 = 0,
@@ -82,7 +84,8 @@ export default function PoolFinder() {
   return (
     <>
       <CardNav activeIndex={1} />
-      <AppBody>
+      <RainbowCard>
+        <RainbowCardBacklight />
         <FindPoolTabs />
         <CardBody>
           <AutoColumn gap="md">
@@ -176,7 +179,7 @@ export default function PoolFinder() {
             selectedCurrency={(activeField === Fields.TOKEN0 ? currency1 : currency0) ?? undefined}
           />
         </CardBody>
-      </AppBody>
+      </RainbowCard>
     </>
   )
 }

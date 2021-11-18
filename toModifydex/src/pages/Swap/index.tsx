@@ -17,7 +17,6 @@ import TradePrice from 'components/swap/TradePrice'
 import TokenWarningModal from 'components/TokenWarningModal'
 import SyrupWarningModal from 'components/SyrupWarningModal'
 import ProgressSteps from 'components/ProgressSteps'
-
 import { INITIAL_ALLOWED_SLIPPAGE } from 'constants/index'
 import { useActiveWeb3React } from 'hooks'
 import { useCurrency } from 'hooks/Tokens'
@@ -34,7 +33,9 @@ import Loader from 'components/Loader'
 import useI18n from 'hooks/useI18n'
 import PageHeader from 'components/PageHeader'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import AppBody from '../AppBody'
+// import AppBody from '../AppBody'
+import RainbowCardBacklight from '../../components/RainbowCardBacklight/RainbowCardBacklight'
+import { RainbowCard } from '../../components/Card'
 
 const Swap = () => {
   const loadedUrlParams = useDefaultsFromURLSearch()
@@ -269,7 +270,8 @@ const Swap = () => {
         onConfirm={handleConfirmSyrupWarning}
       />
       <CardNav />
-      <AppBody>
+      <RainbowCard>
+        <RainbowCardBacklight />
         <Wrapper id="swap-page">
           <ConfirmSwapModal
             isOpen={showConfirm}
@@ -466,7 +468,7 @@ const Swap = () => {
             </BottomGrouping>
           </CardBody>
         </Wrapper>
-      </AppBody>
+      </RainbowCard>
       <AdvancedSwapDetailsDropdown trade={trade} />
     </>
   )
