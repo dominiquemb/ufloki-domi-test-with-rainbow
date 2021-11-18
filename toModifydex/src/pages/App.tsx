@@ -165,15 +165,17 @@ export default function App() {
                 aria-describedby="alert-dialog-description"
               >
                 <DialogTitle id="alert-dialog-title">
-                  Confirm citizenship
+                  Disclaimer
                 </DialogTitle>
                 <DialogContent>
                   <DialogContentText id="alert-dialog-description">
-                    By clicking continue, you confirm that you are not a U.S. citizen.
+                    <p>The services on universal-floki are not available, nor do we hold any liability over any financial gain or loss due to usage of, to the users from the below regions:</p>
+                    <br />
+                    <p>United States of America, China Mainland, Albania, Bosnia and Herzegovina, Belarus, Congo (DRC), Côte d&apos;Ivoire, Crimea, Cuba, Iraq, Iran, North Korea, Liberia, Macedonia, Myanmar, Serbia, Sudan, Syria, Zimbabwe.</p>
                   </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                  <Button variant="contained" color="info" onClick={handleClose}>Continue</Button>
+                  <Button variant="contained" color="info" onClick={handleClose}>I accept</Button>
                 </DialogActions>
               </Dialog>
             </TranslationsContext.Provider>
