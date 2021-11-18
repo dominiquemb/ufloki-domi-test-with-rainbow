@@ -4,7 +4,7 @@ const config: MenuEntry[] = [
   {
     label: 'Home',
     icon: 'HomeIcon',
-    href: 'https://babyschrodinger.com',
+    href: 'https://www.universalfloki.com/',
   },
   {
     label: 'Trade',
@@ -24,12 +24,12 @@ const config: MenuEntry[] = [
   {
     label: 'Farms',
     icon: 'FarmIcon',
-    href: 'https://babyschrodinger.com/farms',
+    href: 'https://www.universalfloki.com/',
   },
   {
     label: 'Pools',
     icon: 'PoolIcon',
-    href: 'https://babyschrodinger.com/syrup',
+    href: 'https://www.universalfloki.com/',
   },
   // {
   //   label: 'Lottery',
