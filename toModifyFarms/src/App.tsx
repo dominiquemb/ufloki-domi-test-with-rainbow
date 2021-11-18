@@ -4,6 +4,12 @@ import { ResetCSS } from '@pancakeswap-libs/uikit'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'
 import { useFetchPriceList, useFetchProfile, useFetchPublicData } from 'state/hooks'
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import useGetDocumentTitlePrice from './hooks/useGetDocumentTitlePrice'
 import GlobalStyle from './style/Global'
 import Menu from './components/Menu'
@@ -29,6 +35,12 @@ BigNumber.config({
 })
 
 const App: React.FC = () => {
+  const [usCitizenDialogOpen, setUsCitzenDialogOpen] = React.useState(true);
+
+  const handleClose = () => {
+    setUsCitzenDialogOpen(false);
+  };
+
   // Monkey patch warn() because of web3 flood
   // To be removed when web3 1.3.5 is released
   useEffect(() => {
@@ -42,58 +54,82 @@ const App: React.FC = () => {
   useGetDocumentTitlePrice()
 
   return (
-    <Router history={history}>
-      <ResetCSS />
-      <GlobalStyle />
-      <Menu>
-        <SuspenseWithChunkError fallback={<> </>}>
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-            <Route path="/farms">
-              <Farms />
-            </Route>
-            <Route path="/pools">
-              <Pools />
-            </Route>
-            <Route path="/lottery">
-              <Lottery />
-            </Route>
-            {/* <Route path="/ifo">
-              <Ifos />
-            </Route>
-            <Route path="/collectibles">
-              <Collectibles />
-            </Route>
-            <Route exact path="/teams">
-              <Teams />
-            </Route>
-            <Route path="/teams/:id">
-              <Team />
-            </Route>
-            <Route path="/profile">
-              <Profile />
-            </Route> */}
-            {/* Redirect */}
-            <Route path="/staking">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/syrup">
-              <Redirect to="/pools" />
-            </Route>
-            {/* <Route path="/nft">
-              <Redirect to="/collectibles" />
-            </Route> */}
-            {/* 404 */}
-            <Route component={NotFound} />
-          </Switch>
-        </SuspenseWithChunkError>
-      </Menu>
-      {/* <EasterEgg iterations={2} /> */}
-      <ToastListener />
-      <GlobalCheckBullHiccupClaimStatus />
-    </Router>
+    <>
+      <Router history={history}>
+        <ResetCSS />
+        <GlobalStyle />
+        <Menu>
+          <SuspenseWithChunkError fallback={<> </>}>
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/farms">
+                <Farms />
+              </Route>
+              <Route path="/pools">
+                <Pools />
+              </Route>
+              <Route path="/lottery">
+                <Lottery />
+              </Route>
+              {/* <Route path="/ifo">
+                <Ifos />
+              </Route>
+              <Route path="/collectibles">
+                <Collectibles />
+              </Route>
+              <Route exact path="/teams">
+                <Teams />
+              </Route>
+              <Route path="/teams/:id">
+                <Team />
+              </Route>
+              <Route path="/profile">
+                <Profile />
+              </Route> */}
+              {/* Redirect */}
+              <Route path="/staking">
+                <Redirect to="/pools" />
+              </Route>
+              <Route path="/syrup">
+                <Redirect to="/pools" />
+              </Route>
+              {/* <Route path="/nft">
+                <Redirect to="/collectibles" />
+              </Route> */}
+              {/* 404 */}
+              <Route component={NotFound} />
+            </Switch>
+          </SuspenseWithChunkError>
+        </Menu>
+        {/* <EasterEgg iterations={2} /> */}
+        <ToastListener />
+        <GlobalCheckBullHiccupClaimStatus />
+        <Dialog
+          open={usCitizenDialogOpen}
+          onClose={(event, reason) => {
+            if (reason !== "backdropClick") {
+              handleClose();
+            }
+          }}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            Confirm citizenship
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              By clicking continue, you confirm that you are not a U.S. citizen.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button variant="contained" color="info" onClick={handleClose}>Continue</Button>
+          </DialogActions>
+        </Dialog>
+      </Router>
+    </>
   )
 }
 

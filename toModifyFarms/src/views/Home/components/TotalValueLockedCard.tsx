@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading, Skeleton, Text } from '@pancakeswap-libs/uikit'
+import { CardBody, Heading, Skeleton, Text } from '@pancakeswap-libs/uikit'
 import useI18n from 'hooks/useI18n'
 import { useGetStats } from 'hooks/api'
+import RainbowCardBacklight from '../../../components/RainbowCardBacklight/RainbowCardBacklight'
+import { RainbowCard } from '../../../components/Card'
 
-const StyledTotalValueLockedCard = styled(Card)`
+const StyledTotalValueLockedCard = styled(RainbowCard)`
   align-items: center;
   display: flex;
   flex: 1;
@@ -17,6 +19,7 @@ const TotalValueLockedCard = () => {
 
   return (
     <StyledTotalValueLockedCard>
+      <RainbowCardBacklight />
       <CardBody>
         <Heading size="lg" mb="24px" color="secondary">
           {TranslateString(762, 'Total Value Locked (TVL)')}

@@ -25,6 +25,7 @@ import Card from './Card'
 import OldSyrupTitle from './OldSyrupTitle'
 import HarvestButton from './HarvestButton'
 import CardFooter from './CardFooter'
+import RainbowCardBacklight from '../../../components/RainbowCardBacklight/RainbowCardBacklight'
 
 interface HarvestProps {
   pool: Pool
@@ -120,6 +121,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
 
   return (
     <Card isActive={isCardActive} isFinished={isFinished && sousId !== 0}>
+      <RainbowCardBacklight />
       {isFinished && sousId !== 0 && <PoolFinishedSash />}
       <div style={{ padding: '24px' }}>
         <CardTitle isFinished={isFinished && sousId !== 0}>
@@ -222,6 +224,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     </Card>
   )
 }
+
 
 const PoolFinishedSash = styled.div`
   background-image: url('/images/pool-finished-sash.svg');

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
-import styled from 'styled-components'
-import { Heading, Card, CardBody, Button } from '@pancakeswap-libs/uikit'
+import styled, { keyframes } from 'styled-components'
+import { Heading, CardBody, Button } from '@pancakeswap-libs/uikit'
 import { useWeb3React } from '@web3-react/core'
 import useI18n from 'hooks/useI18n'
 import { useAllHarvest } from 'hooks/useHarvest'
@@ -8,8 +8,11 @@ import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
 import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
+import RainbowCardBacklight from '../../../components/RainbowCardBacklight/RainbowCardBacklight'
+import { RainbowCard } from '../../../components/Card'
 
-const StyledFarmStakingCard = styled(Card)`
+const StyledFarmStakingCard = styled(RainbowCard)`
+  position: relative;
   background-image: url('/images/cake-bg.svg');
   background-repeat: no-repeat;
   background-position: top right;
@@ -54,7 +57,8 @@ const FarmedStakingCard = () => {
   }, [onReward])
 
   return (
-    <StyledFarmStakingCard>
+    <StyledFarmStakingCard className="test">
+      <RainbowCardBacklight />
       <CardBody>
         <Heading size="xl" mb="24px">
           {TranslateString(542, 'Farms & Staking')}

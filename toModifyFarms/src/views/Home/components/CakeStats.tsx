@@ -1,13 +1,15 @@
 import React from 'react'
-import { Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
+import { CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import { getCakeAddress } from 'utils/addressHelpers'
 import CardValue from './CardValue'
+import RainbowCardBacklight from '../../../components/RainbowCardBacklight/RainbowCardBacklight'
+import { RainbowCard } from '../../../components/Card'
 
-const StyledCakeStats = styled(Card)`
+const StyledCakeStats = styled(RainbowCard)`
   margin-left: auto;
   margin-right: auto;
 `
@@ -28,6 +30,7 @@ const CakeStats = () => {
 
   return (
     <StyledCakeStats>
+      <RainbowCardBacklight />
       <CardBody>
         <Heading size="xl" mb="24px">
           {TranslateString(534, 'Litter Stats')}

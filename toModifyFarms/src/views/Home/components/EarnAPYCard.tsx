@@ -1,14 +1,16 @@
 import React, { useCallback, useRef } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Flex, ArrowForwardIcon, Skeleton } from '@pancakeswap-libs/uikit'
+import { Heading, CardBody, Flex, ArrowForwardIcon, Skeleton } from '@pancakeswap-libs/uikit'
 import { NavLink } from 'react-router-dom'
 import useI18n from 'hooks/useI18n'
 import BigNumber from 'bignumber.js'
 import { QuoteToken } from 'config/constants/types'
 import { useFarms, usePriceBnbBusd } from 'state/hooks'
 import { BLOCKS_PER_YEAR, CAKE_PER_BLOCK, CAKE_POOL_PID } from 'config'
+import RainbowCardBacklight from '../../../components/RainbowCardBacklight/RainbowCardBacklight'
+import { RainbowCard } from '../../../components/Card'
 
-const StyledFarmStakingCard = styled(Card)`
+const StyledFarmStakingCard = styled(RainbowCard)`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -76,6 +78,7 @@ const EarnAPYCard = () => {
 
   return (
     <StyledFarmStakingCard>
+      <RainbowCardBacklight />
       <CardBody>
         <Heading color="contrast" size="lg">
           Earn up to
