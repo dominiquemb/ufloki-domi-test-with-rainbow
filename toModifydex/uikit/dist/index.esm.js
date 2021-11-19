@@ -2454,14 +2454,14 @@ var socials = [
         items: [
             {
                 label: "Official Channel",
-                href: "https://t.me/babydinger",
+                href: "https://t.me/universalflokichat",
             },
         ],
     },
     {
         label: "Twitter",
         icon: "TwitterIcon",
-        href: "https://twitter.com/schrodingercoin",
+        href: "https://twitter.com/universalfloki",
     },
 ];
 var MENU_HEIGHT = 64;
