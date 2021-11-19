@@ -24,12 +24,12 @@ const config: MenuEntry[] = [
   {
     label: 'Farms',
     icon: 'FarmIcon',
-    href: 'https://www.universalfloki.com/',
+    href: 'https://www.universalfloki.com/farms',
   },
   {
     label: 'Pools',
     icon: 'PoolIcon',
-    href: 'https://www.universalfloki.com/',
+    href: 'https://www.universalfloki.com/farms',
   },
   // {
   //   label: 'Lottery',
@@ -87,28 +87,28 @@ const config: MenuEntry[] = [
   //   icon: 'IfoIcon',
   //   href: 'https://babyschrodinger.com/ifo',
   // },
-  // {
-  //   label: 'More',
-  //   icon: 'MoreIcon',
-  //   items: [
-  //     {
-  //       label: 'Voting',
-  //       href: 'https://voting.babyschrodinger.com',
-  //     },
-  //     {
-  //       label: 'Github',
-  //       href: 'https://github.com/pancakeswap',
-  //     },
-  //     {
-  //       label: 'Docs',
-  //       href: 'https://docs.babyschrodinger.com',
-  //     },
-  //     {
-  //       label: 'Blog',
-  //       href: 'https://pancakeswap.medium.com',
-  //     },
-  //   ],
-  // },
+   {
+    label: 'More',
+    icon: 'MoreIcon',
+    items: [
+      {
+        label: 'Telegram',
+        href: 'https://t.me/universalflokichat',
+      },
+      {
+        label: 'Twitter',
+        href: 'https://twitter.com/universalfloki',
+      },
+      {
+        label: 'Disclaimer',
+        href: 'https://universalfloki.com/disclaimer',
+      },
+      {
+        label: 'litePaper',
+        href: 'https://universal-floki.gitbook.io/universal-floki-litepaper/',
+      },
+    ],
+  },
 ]
 
 export default config

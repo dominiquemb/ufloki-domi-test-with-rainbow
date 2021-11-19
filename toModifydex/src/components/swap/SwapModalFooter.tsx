@@ -53,7 +53,11 @@ export default function SwapModalFooter({
               textAlign: 'right',
               paddingLeft: '8px',
               fontWeight: 500,
+<<<<<<< HEAD
               color: '#666'
+=======
+              color: 'black',
+>>>>>>> b3721bb5575de30613f423458684a62be0b9c374
             }}
           >
             {formatExecutionPrice(trade, showInverted)}
