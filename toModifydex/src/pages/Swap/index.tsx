@@ -472,6 +472,7 @@ const Swap = () => {
       <AdvancedSwapDetailsDropdown trade={trade} />
     </>
   )
+
 }
 
 export default Swap

@@ -22,7 +22,9 @@ import { EN, allLanguages } from '../constants/localisation/languageCodes'
 import { LanguageContext } from '../hooks/LanguageContext'
 import { TranslationsContext } from '../hooks/TranslationsContext'
 
-import Menu from '../components/Menu'
+
+import Menu from '../components/Menu';
+
 
 const AppWrapper = styled.div`
   display: flex;
@@ -165,17 +167,19 @@ export default function App() {
                 aria-describedby="alert-dialog-description"
               >
                 <DialogTitle id="alert-dialog-title">
-                  Disclaimer
+                  Liability Waiver / Disclaimer: 
                 </DialogTitle>
                 <DialogContent>
                   <DialogContentText id="alert-dialog-description">
-                    <p>The services on universal-floki are not available, nor do we hold any liability over any financial gain or loss due to usage of, to the users from the below regions:</p>
+                    <p>No content on the site constitutes - or should be understood as constituting - a recommendation to enter in any securities, cryptocurrency, or cryptoasset transactions or to engage in any of the investment strategies presented in our online content. The services on universal-floki are not intended for use in the countries listed below. We do NOT hold any liability over any financial gain or loss due to usage of univerflokiswap, if you are a user from the below regions:</p>
                     <br />
-                    <p>United States of America, China Mainland, Albania, Bosnia and Herzegovina, Belarus, Congo (DRC), Côte d&apos;Ivoire, Crimea, Cuba, Iraq, Iran, North Korea, Liberia, Macedonia, Myanmar, Serbia, Sudan, Syria, Zimbabwe.</p>
+                    <p>United States of America, China Mainland, Albania, Bosnia and Herzegovina, Belarus, Congo (DRC), Côte d&apos;Ivoire, Crimea, Cuba, Iraq, Iran, North Korea, Liberia, Macedonia, Myanmar, Serbia, Sudan, Syria, Zimbabwe.
+                      <br />
+                        <a href ="https://universalfloki.com/disclaimer">!!!READ OUR FULL DISCLAIMER HERE!!!</a></p>
                   </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                  <Button variant="contained" color="info" onClick={handleClose}>I accept</Button>
+                  <Button variant="contained" color="primary" onClick={handleClose}>I accept</Button>
                 </DialogActions>
               </Dialog>
             </TranslationsContext.Provider>

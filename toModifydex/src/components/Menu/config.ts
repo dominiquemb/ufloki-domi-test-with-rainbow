@@ -99,14 +99,14 @@ const config: MenuEntry[] = [
         label: 'Twitter',
         href: 'https://twitter.com/universalfloki',
       },
-      // {
-      //   label: 'Docs',
-      //   href: 'https://docs.babyschrodinger.com',
-      // },
-      // {
-      //   label: 'Blog',
-      //   href: 'https://pancakeswap.medium.com',
-      // },
+      {
+        label: 'Disclaimer',
+        href: 'https://universalfloki.com/disclaimer',
+      },
+      {
+        label: 'litePaper',
+        href: 'https://universal-floki.gitbook.io/universal-floki-litepaper/',
+      },
     ],
   },
 ]
