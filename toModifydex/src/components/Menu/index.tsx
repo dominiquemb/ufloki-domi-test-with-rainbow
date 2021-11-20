@@ -27,6 +27,7 @@ const Menu: React.FC = (props) => {
           activate(connector)
         }
       }}
+      // footerLinks={footerLinks(t)}
       logout={deactivate}
       isDark={isDark}
       toggleTheme={toggleTheme}

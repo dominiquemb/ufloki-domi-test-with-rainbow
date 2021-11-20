@@ -109,6 +109,51 @@ const config: MenuEntry[] = [
       },
     ],
   },
-]
+];
+
+export const footerLinks: any = {
+  'column1': [
+    {
+      label: 'Link 1',
+      href: 'https://pancakeswap.info',
+    },
+    {
+      label: 'Link 2',
+      href: 'https://pancakeswap.info',
+    },
+    {
+      label: 'Link 2',
+      href: 'https://pancakeswap.info',
+    },
+  ],
+  'column2': [
+    {
+      label: 'Link 1',
+      href: 'https://pancakeswap.info',
+    },
+    {
+      label: 'Link 2',
+      href: 'https://pancakeswap.info',
+    },
+    {
+      label: 'Link 2',
+      href: 'https://pancakeswap.info',
+    },
+  ],
+  'column3': [
+    {
+      label: 'Link 1',
+      href: 'https://pancakeswap.info',
+    },
+    {
+      label: 'Link 2',
+      href: 'https://pancakeswap.info',
+    },
+    {
+      label: 'Link 2',
+      href: 'https://pancakeswap.info',
+    },
+  ]
+};
 
 export default config

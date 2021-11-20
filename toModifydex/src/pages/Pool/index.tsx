@@ -21,6 +21,7 @@ import PageHeader from 'components/PageHeader'
 // import AppBody from '../AppBody'
 import RainbowCardBacklight from '../../components/RainbowCardBacklight/RainbowCardBacklight'
 import { RainbowCard } from '../../components/Card'
+import Footer from '../../components/Footer/Footer'
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
@@ -123,6 +124,7 @@ export default function Pool() {
           </CardBody>
         </AutoColumn>
       </RainbowCard>
+      <Footer />
     </>
   )
 }

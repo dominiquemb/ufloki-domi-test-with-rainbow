@@ -19,6 +19,7 @@ import useI18n from 'hooks/useI18n'
 import { Dots } from '../Pool/styleds'
 import RainbowCardBacklight from '../../components/RainbowCardBacklight/RainbowCardBacklight'
 import { RainbowCard } from '../../components/Card'
+import Footer from '../../components/Footer/Footer'
 
 enum Fields {
   TOKEN0 = 0,
@@ -180,6 +181,7 @@ export default function PoolFinder() {
           />
         </CardBody>
       </RainbowCard>
+      <Footer />
     </>
   )
 }
